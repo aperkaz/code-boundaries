@@ -4,7 +4,15 @@ An example on how to setup code-boundaries in a TypeScript project, for fun and 
 
 The boundaries are enforced through [good-fences](https://github.com/smikula/good-fences).
 
-<!-- TODONOW: complete documentation -->
+## Goal
+
+As TypeScipt projects grow in complexity and number of developers, it becomes harder to prevent ad-hock imports between any file within the project.
+
+PR reviews can help with that, but over developers and reviewer may forget, slowly but surely driving the project towards dependency hell.
+Why is the UI module defining domain-specific types that the store modules depends on?
+Why is the stand-alone math module depending on an authentication module helper?
+
+Being explicit about the coundaries of you code and its modules is a great way to avoid this, by setting a dependency graph at design time and enforcing it in the CI pipeline.
 
 ## Available Scripts
 

@@ -1,5 +1,6 @@
 {
   "tags": ["math-module"],
   "exports": ["index"],
-  "imports": []
+  "imports": [],
+  "dependencies": []
 }

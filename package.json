@@ -24,7 +24,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "good-fences": "node ./node_modules/good-fences/lib/core/cli.js -p tsconfig.json --rootDir src"
+    "good-fences": "node ./node_modules/good-fences/lib/core/cli.js -p tsconfig.json --rootDir src --progressBar true"
   },
   "eslintConfig": {
     "extends": [

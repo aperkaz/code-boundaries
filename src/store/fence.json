@@ -1,0 +1,6 @@
+{
+  "tags": ["store-module"],
+  "exports": ["index"],
+  "imports": ["math-module"],
+  "dependencies": ["react-redux", "@reduxjs/toolkit"]
+}

@@ -1,60 +1,39 @@
 import React from "react";
-import logo from "./logo.svg";
-import { Counter } from "../features/counter/Counter";
+
+import { actions, useAppDispatch, useAppSelector } from "../store";
 import "./App.css";
 
-// WORKS
-// import { fibonacci } from "../math";
-// FAILS
-import { FibonacciFunction } from "../math/types";
-
 function App() {
+  const dispatch = useAppDispatch();
+  const result = useAppSelector((s) => s.calculator.result);
+
+  const [nth, setNth] = React.useState(1);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
+        <h1>🎉 This is the code-boundaries demo 🎉</h1>
+        Nth number:
+        <input
+          value={nth}
+          type="number"
+          onChange={(e) => setNth(parseInt(e.target.value))}
+        ></input>
+        <div className="App-row">
+          <button
+            className="App-button"
+            onClick={() => dispatch(actions.calculateFibonacciNumber(nth))}
           >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
+            fibonnacy
+          </button>
+          <button
+            className="App-button"
+            onClick={() => dispatch(actions.calculatePellNumber(nth))}
           >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
+            pell
+          </button>
+        </div>
+        <h4>Result: {result}</h4>
       </header>
     </div>
   );
