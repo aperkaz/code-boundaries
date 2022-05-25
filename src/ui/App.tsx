@@ -3,6 +3,11 @@ import logo from "./logo.svg";
 import { Counter } from "../features/counter/Counter";
 import "./App.css";
 
+// WORKS
+// import { fibonacci } from "../math";
+// FAILS
+import { FibonacciFunction } from "../math/types";
+
 function App() {
   return (
     <div className="App">
